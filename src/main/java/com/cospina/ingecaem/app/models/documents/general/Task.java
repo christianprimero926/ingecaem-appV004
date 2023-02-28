@@ -14,7 +14,7 @@ public class Task {
     private String id_ind_plant;
     private String code_type_work;
     private String id_project_manager;
-    private Status id_status;
+    private String id_status;
     private List<String> operators_assigned;
     private String description;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
@@ -22,7 +22,7 @@ public class Task {
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date end_date;
 
-    public Task(String id_ind_plant, String code_type_work, String id_project_manager, Status id_status, List<String> operators_assigned, String description) {
+    public Task(String id_ind_plant, String code_type_work, String id_project_manager, String id_status, List<String> operators_assigned, String description) {
         this.id_ind_plant = id_ind_plant;
         this.code_type_work = code_type_work;
         this.id_project_manager = id_project_manager;
@@ -66,11 +66,11 @@ public class Task {
         this.id_project_manager = id_project_manager;
     }
 
-    public Status getId_status() {
+    public String getId_status() {
         return id_status;
     }
 
-    public void setId_status(Status id_status) {
+    public void setId_status(String id_status) {
         this.id_status = id_status;
     }
 
