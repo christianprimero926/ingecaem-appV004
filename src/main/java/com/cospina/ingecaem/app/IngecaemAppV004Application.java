@@ -47,7 +47,7 @@ public class IngecaemAppV004Application implements CommandLineRunner {
                         new Task("Nestle01", "elctrico", "jorge", estado.getId(), operators, "algo")
                 )
                 .flatMap(task -> {
-                    task.setStart_date(new Date());
+                    task.setStartDate(new Date());
                     return taskDao.save(task);
                 })
                 .subscribe(task -> LOGGER.info("Insert: " + task.getId() + " " + task.getDescription()));

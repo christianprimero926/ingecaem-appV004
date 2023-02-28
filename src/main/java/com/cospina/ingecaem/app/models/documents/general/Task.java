@@ -11,23 +11,23 @@ import java.util.List;
 public class Task {
     @Id
     private String id;
-    private String id_ind_plant;
-    private String code_type_work;
-    private String id_project_manager;
-    private String id_status;
-    private List<String> operators_assigned;
+    private String codePlant;
+    private String codeTypeWork;
+    private String codeProjectManager;
+    private String codeStatus;
+    private List<String> operatorsAssigned;
     private String description;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Date start_date;
+    private Date startDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Date end_date;
+    private Date endDate;
 
-    public Task(String id_ind_plant, String code_type_work, String id_project_manager, String id_status, List<String> operators_assigned, String description) {
-        this.id_ind_plant = id_ind_plant;
-        this.code_type_work = code_type_work;
-        this.id_project_manager = id_project_manager;
-        this.id_status = id_status;
-        this.operators_assigned = operators_assigned;
+    public Task(String codePlant, String codeTypeWork, String codeProjectManager, String codeStatus, List<String> operatorsAssigned, String description) {
+        this.codePlant = codePlant;
+        this.codeTypeWork = codeTypeWork;
+        this.codeProjectManager = codeProjectManager;
+        this.codeStatus = codeStatus;
+        this.operatorsAssigned = operatorsAssigned;
         this.description = description;
     }
 
@@ -42,44 +42,44 @@ public class Task {
         this.id = id;
     }
 
-    public String getId_ind_plant() {
-        return id_ind_plant;
+    public String getCodePlant() {
+        return codePlant;
     }
 
-    public void setId_ind_plant(String id_ind_plant) {
-        this.id_ind_plant = id_ind_plant;
+    public void setCodePlant(String codePlant) {
+        this.codePlant = codePlant;
     }
 
-    public String getCode_type_work() {
-        return code_type_work;
+    public String getCodeTypeWork() {
+        return codeTypeWork;
     }
 
-    public void setCode_type_work(String code_type_work) {
-        this.code_type_work = code_type_work;
+    public void setCodeTypeWork(String codeTypeWork) {
+        this.codeTypeWork = codeTypeWork;
     }
 
-    public String getId_project_manager() {
-        return id_project_manager;
+    public String getCodeProjectManager() {
+        return codeProjectManager;
     }
 
-    public void setId_project_manager(String id_project_manager) {
-        this.id_project_manager = id_project_manager;
+    public void setCodeProjectManager(String codeProjectManager) {
+        this.codeProjectManager = codeProjectManager;
     }
 
-    public String getId_status() {
-        return id_status;
+    public String getCodeStatus() {
+        return codeStatus;
     }
 
-    public void setId_status(String id_status) {
-        this.id_status = id_status;
+    public void setCodeStatus(String codeStatus) {
+        this.codeStatus = codeStatus;
     }
 
-    public List<String> getOperators_assigned() {
-        return operators_assigned;
+    public List<String> getOperatorsAssigned() {
+        return operatorsAssigned;
     }
 
-    public void setOperators_assigned(List<String> operators_assigned) {
-        this.operators_assigned = operators_assigned;
+    public void setOperatorsAssigned(List<String> operatorsAssigned) {
+        this.operatorsAssigned = operatorsAssigned;
     }
 
     public String getDescription() {
@@ -90,19 +90,19 @@ public class Task {
         this.description = description;
     }
 
-    public Date getStart_date() {
-        return start_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEnd_date() {
-        return end_date;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(Date end_date) {
-        this.end_date = end_date;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 }
