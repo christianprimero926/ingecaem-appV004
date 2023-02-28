@@ -41,6 +41,8 @@ public class IngecaemAppV004Application implements CommandLineRunner {
         operators.add("Juan");
         operators.add("pepito");
 
+        mongoTemplate.dropCollection("ic_g_task").subscribe();
+
         Flux.just(
                         new Task("Nestle01", "elctrico", "jorge", estado.getId(), operators, "algo")
                 )

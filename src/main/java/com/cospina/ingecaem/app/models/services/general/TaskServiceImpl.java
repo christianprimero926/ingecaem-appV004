@@ -1,18 +1,24 @@
 package com.cospina.ingecaem.app.models.services.general;
 
+import com.cospina.ingecaem.app.models.dao.general.TaskDao;
 import com.cospina.ingecaem.app.models.documents.general.Task;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
 public class TaskServiceImpl implements TaskService{
+
+    @Autowired
+    private TaskDao taskDao;
+
     /**
      * @return
      */
     @Override
     public Flux<Task> findAll() {
-        return null;
+        return taskDao.findAll();
     }
 
     /**
@@ -21,7 +27,7 @@ public class TaskServiceImpl implements TaskService{
      */
     @Override
     public Mono<Task> findById(String id) {
-        return null;
+        return taskDao.findById(id);
     }
 
     /**
