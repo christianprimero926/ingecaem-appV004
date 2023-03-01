@@ -1,4 +1,4 @@
-package com.cospina.ingecaem.app.models.documents.operation;
+package com.cospina.ingecaem.app.models.documents.settings;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@Document(collection = "ic_o_user")
+@Document(collection = "ic_s_user")
 public class User {
     @Id
     private String id;

@@ -1,12 +1,11 @@
-package com.cospina.ingecaem.app.controller.general;
+package com.cospina.ingecaem.app.controller.register;
 
-import com.cospina.ingecaem.app.models.documents.general.Task;
-import com.cospina.ingecaem.app.models.services.general.TaskService;
+import com.cospina.ingecaem.app.models.documents.register.Task;
+import com.cospina.ingecaem.app.models.services.register.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,7 +15,7 @@ import java.util.NoSuchElementException;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
-@RequestMapping(name = "Task", path = "/api/task")
+@RequestMapping(name = "Task", path = "/api/tasks")
 public class TaskController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TaskController.class);
     @Autowired

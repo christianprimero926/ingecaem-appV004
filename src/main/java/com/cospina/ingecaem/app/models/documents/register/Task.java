@@ -1,4 +1,4 @@
-package com.cospina.ingecaem.app.models.documents.general;
+package com.cospina.ingecaem.app.models.documents.register;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 import java.util.List;
 
-@Document(collection = "ic_g_task")
+@Document(collection = "ic_r_task")
 public class Task {
     @Id
     private String id;
@@ -17,10 +17,9 @@ public class Task {
     private String codeStatus;
     private List<String> operatorsAssigned;
     private String description;
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Date startDate;
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Date endDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createAt;
+    private Double assignedHours;
 
     public Task(String codePlant, String codeTypeWork, String codeProjectManager, String codeStatus, List<String> operatorsAssigned, String description) {
         this.codePlant = codePlant;
@@ -90,19 +89,19 @@ public class Task {
         this.description = description;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getCreateAt() {
+        return createAt;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Double getAssignedHours() {
+        return assignedHours;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setAssignedHours(Double assignedHours) {
+        this.assignedHours = assignedHours;
     }
 }

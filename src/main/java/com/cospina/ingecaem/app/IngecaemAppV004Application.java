@@ -1,8 +1,8 @@
 package com.cospina.ingecaem.app;
 
-import com.cospina.ingecaem.app.models.dao.general.TaskDao;
-import com.cospina.ingecaem.app.models.documents.general.Status;
-import com.cospina.ingecaem.app.models.documents.general.Task;
+import com.cospina.ingecaem.app.models.dao.register.TaskDao;
+import com.cospina.ingecaem.app.models.documents.register.Status;
+import com.cospina.ingecaem.app.models.documents.register.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import reactor.core.publisher.Flux;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 @SpringBootApplication
 public class IngecaemAppV004Application implements CommandLineRunner {
@@ -41,13 +44,15 @@ public class IngecaemAppV004Application implements CommandLineRunner {
         operators.add("Juan");
         operators.add("pepito");
 
-        mongoTemplate.dropCollection("ic_g_task").subscribe();
+        mongoTemplate.dropCollection("ic_r_task").subscribe();
 
         Flux.just(
                         new Task("Nestle01", "elctrico", "jorge", estado.getId(), operators, "algo")
                 )
                 .flatMap(task -> {
-                    task.setStartDate(new Date());
+                    DateFormat sourceFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.getDefault());
+                    DateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    task.setCreateAt(new Date());
                     return taskDao.save(task);
                 })
                 .subscribe(task -> LOGGER.info("Insert: " + task.getId() + " " + task.getDescription()));

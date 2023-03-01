@@ -1,11 +1,10 @@
-package com.cospina.ingecaem.app.controller.general;
+package com.cospina.ingecaem.app.controller.register;
 
-import com.cospina.ingecaem.app.models.documents.general.Status;
-import com.cospina.ingecaem.app.models.services.general.StatusService;
+import com.cospina.ingecaem.app.models.documents.register.Status;
+import com.cospina.ingecaem.app.models.services.register.StatusService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 

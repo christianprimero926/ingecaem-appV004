@@ -1,4 +1,4 @@
-package com.cospina.ingecaem.app.models.documents.general;
+package com.cospina.ingecaem.app.models.documents.register;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@Document
+@Document(collection = "ic_r_records_hours_worked")
 public class RecordsHours {
     @Id
     private String id;
@@ -14,10 +14,14 @@ public class RecordsHours {
     private String codePlant;
     private String codeTask;
     private String description;
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date entryDate;
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "h:mm:ss a")
+    private Date entryHour;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date outDate;
+    @DateTimeFormat(pattern = "h:mm:ss a")
+    private Date outHour;
     private boolean irregularities;
     private Double assignedHours;
     private Double hoursDay;
@@ -123,5 +127,21 @@ public class RecordsHours {
 
     public void setTotalHours(Double totalHours) {
         this.totalHours = totalHours;
+    }
+
+    public Date getEntryHour() {
+        return entryHour;
+    }
+
+    public void setEntryHour(Date entryHour) {
+        this.entryHour = entryHour;
+    }
+
+    public Date getOutHour() {
+        return outHour;
+    }
+
+    public void setOutHour(Date outHour) {
+        this.outHour = outHour;
     }
 }

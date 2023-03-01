@@ -1,7 +1,7 @@
-package com.cospina.ingecaem.app.models.services.general;
+package com.cospina.ingecaem.app.models.services.register;
 
-import com.cospina.ingecaem.app.models.dao.general.TaskDao;
-import com.cospina.ingecaem.app.models.documents.general.Task;
+import com.cospina.ingecaem.app.models.dao.register.TaskDao;
+import com.cospina.ingecaem.app.models.documents.register.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

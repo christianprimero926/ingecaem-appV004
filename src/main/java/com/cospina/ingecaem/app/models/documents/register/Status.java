@@ -1,9 +1,9 @@
-package com.cospina.ingecaem.app.models.documents.general;
+package com.cospina.ingecaem.app.models.documents.register;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ic_g_status")
+@Document(collection = "ic_r_status")
 public class Status {
     @Id
     private String id;
