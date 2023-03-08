@@ -1,5 +1,7 @@
 package com.cospina.ingecaem.app.models.documents.register;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -7,6 +9,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
 @Document(collection = "ic_r_task")
 public class Task {
     @Id
@@ -33,75 +37,4 @@ public class Task {
     public Task() {
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCodePlant() {
-        return codePlant;
-    }
-
-    public void setCodePlant(String codePlant) {
-        this.codePlant = codePlant;
-    }
-
-    public String getCodeTypeWork() {
-        return codeTypeWork;
-    }
-
-    public void setCodeTypeWork(String codeTypeWork) {
-        this.codeTypeWork = codeTypeWork;
-    }
-
-    public String getCodeProjectManager() {
-        return codeProjectManager;
-    }
-
-    public void setCodeProjectManager(String codeProjectManager) {
-        this.codeProjectManager = codeProjectManager;
-    }
-
-    public String getCodeStatus() {
-        return codeStatus;
-    }
-
-    public void setCodeStatus(String codeStatus) {
-        this.codeStatus = codeStatus;
-    }
-
-    public List<String> getOperatorsAssigned() {
-        return operatorsAssigned;
-    }
-
-    public void setOperatorsAssigned(List<String> operatorsAssigned) {
-        this.operatorsAssigned = operatorsAssigned;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
-
-    public Double getAssignedHours() {
-        return assignedHours;
-    }
-
-    public void setAssignedHours(Double assignedHours) {
-        this.assignedHours = assignedHours;
-    }
 }

@@ -1,11 +1,15 @@
 package com.cospina.ingecaem.app.models.documents.register;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+@Getter
+@Setter
 @Document(collection = "ic_r_records_hours_worked")
 public class RecordsHours {
     @Id
@@ -37,111 +41,6 @@ public class RecordsHours {
         this.hoursDay = hoursDay;
         this.totalHours = totalHours;
     }
-
     public RecordsHours() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCodeUser() {
-        return codeUser;
-    }
-
-    public void setCodeUser(String codeUser) {
-        this.codeUser = codeUser;
-    }
-
-    public String getCodePlant() {
-        return codePlant;
-    }
-
-    public void setCodePlant(String codePlant) {
-        this.codePlant = codePlant;
-    }
-
-    public String getCodeTask() {
-        return codeTask;
-    }
-
-    public void setCodeTask(String codeTask) {
-        this.codeTask = codeTask;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getEntryDate() {
-        return entryDate;
-    }
-
-    public void setEntryDate(Date entryDate) {
-        this.entryDate = entryDate;
-    }
-
-    public Date getOutDate() {
-        return outDate;
-    }
-
-    public void setOutDate(Date outDate) {
-        this.outDate = outDate;
-    }
-
-    public boolean isIrregularities() {
-        return irregularities;
-    }
-
-    public void setIrregularities(boolean irregularities) {
-        this.irregularities = irregularities;
-    }
-
-    public Double getAssignedHours() {
-        return assignedHours;
-    }
-
-    public void setAssignedHours(Double assignedHours) {
-        this.assignedHours = assignedHours;
-    }
-
-    public Double getHoursDay() {
-        return hoursDay;
-    }
-
-    public void setHoursDay(Double hoursDay) {
-        this.hoursDay = hoursDay;
-    }
-
-    public Double getTotalHours() {
-        return totalHours;
-    }
-
-    public void setTotalHours(Double totalHours) {
-        this.totalHours = totalHours;
-    }
-
-    public Date getEntryHour() {
-        return entryHour;
-    }
-
-    public void setEntryHour(Date entryHour) {
-        this.entryHour = entryHour;
-    }
-
-    public Date getOutHour() {
-        return outHour;
-    }
-
-    public void setOutHour(Date outHour) {
-        this.outHour = outHour;
     }
 }
