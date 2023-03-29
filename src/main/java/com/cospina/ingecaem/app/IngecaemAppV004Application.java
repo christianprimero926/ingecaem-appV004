@@ -39,7 +39,7 @@ public class IngecaemAppV004Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<String> operators = new ArrayList<>();
         Status estado = new Status();
-        estado.setId("200");
+        estado.setCode("200");
         operators.add("Carlos");
         operators.add("Juan");
         operators.add("pepito");
